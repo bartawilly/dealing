@@ -40,10 +40,10 @@
         <!-- Initialize username & password form -->
         <div class="col-md-6" id="InitializeFrm" style="display: none;">
             <form action="<?php echo base_url('/intialize'); ?>" method="post" enctype="multipart/form-data">
-                <label for="username"><b>DBUsername</b></label>
+                <label for="username"><b>MySQL Username</b></label>
                 <input type="text" placeholder="Enter Username" name="username" required>
                 <br>
-                <label for="password"><b>DBPassword</b></label>
+                <label for="password"><b>MySQL Password</b></label>
                 <input type="password" placeholder="Enter Password" name="password">
 
                 <input type="submit" class="btn btn-primary" name="intializeSubmit" value="Initialize">
