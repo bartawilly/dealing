@@ -13,6 +13,7 @@ This task has been done based on codeigniter PHP framework. The task requirement
 git clone https://github.com/bartawilly/dealing.git
 ```
 Or instead you can go directly to [Dealing](https://github.com/bartawilly/dealing) and download it as ZIP and unzip it to ./wwww directory
+IMPORTANT NOTE: if you going to use the github link to download the project as .ZIP file don't forget to rename the extracted folder to (dealing) instead of (dealing-master)
 
 - Open your browser and write this URL (http://localhost/dealing/)
 
