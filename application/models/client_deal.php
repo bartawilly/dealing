@@ -37,7 +37,9 @@ class Client_deal extends CI_Model{
         
 
         // after a successfull connection start for run some queries to initialize the database and tables
-
+        // firstly drop the database if it's already exist
+        $sql = 'DROP DATABASE IF EXISTS `client_deal`';
+        $conn->query($sql);
         // staring here with some default configs for the database
         $sql = 'SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO"';
         $conn->query($sql);
@@ -129,7 +131,7 @@ class Client_deal extends CI_Model{
         }
         else{
             // if the file is not exist anymore popup a message for the end user to initialize first
-            $this->session->set_userdata('error_msg','error while connecting to DB please initialize first!');
+            $this->session->set_userdata('error_msg','Please initialize then import to show your data!');
             return false;
          }
     }
@@ -245,6 +247,23 @@ class Client_deal extends CI_Model{
         $this->dbConnect();
         $this->db->truncate('clients_deals');
 
+    }
+    // reset all by deleting the entire database
+    public function resetAll(){
+        // get the credentials from the json file
+        $credentialsFile = APPPATH. "db_credentials.json";
+        $cred = file_get_contents($credentialsFile, true);
+        $credentials = json_decode($cred, true);
+        // Create db connection
+        $conn = mysqli_connect($credentials['servername'], $credentials['username'], $credentials['password']);
+        // SQL Drop database
+        $sql = 'DROP DATABASE IF EXISTS `client_deal`';
+        $conn->query($sql);
+        //close the db connection
+        $conn->close();
+        //delete the db credentials json file
+        unlink($credentialsFile);
+        $this->session->set_userdata('success_msg', 'database, tables and data have been deleted! ');
     }
     
 }

@@ -82,6 +82,15 @@
         </table>
 
     </div>
+     <!-- Reset all to default again form -->
+    <div class="row">
+        <div class="col-md-12">
+            <form action="<?php echo base_url('/resetAll'); ?>" method="post" enctype="multipart/form-data">
+
+                <input type="submit" class="btn btn-danger" name="resetAllSubmit" value="Reset All">
+            </form>
+        </dive>
+    </dive>
 </div>
 <!-- script for hide and show the form onclick on the btn -->
 <script>

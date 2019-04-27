@@ -178,5 +178,18 @@ class Welcome extends CI_Controller {
 		//redirect back to the home
 		redirect('/');
 	}
+	// reset all func controller calls a model func that drop the entire database
+	public function resetAll(){
+		// first check the database connection 
+		if($this->client_deal->dbCheckConnection()){
+			//call the model func to reset all
+			$this->client_deal->resetAll();
+		}
+		else{
+			$this->session->set_userdata('error_msg', 'nothing here to be reseted!');
+		}
+		//redirect back to the home
+		redirect('/');
+	}
 
 }

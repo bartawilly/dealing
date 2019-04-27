@@ -22,6 +22,7 @@ Or instead you can go directly to [Dealing](https://github.com/bartawilly/dealin
 
 - Then you have to import the data from the CSV file by click on the import file then choose the file and click import.
 - All the data will appear on the table and you can do some operations on it like search, filter or sort by using the table functions on the page.
+- you can reset all - drop the database including all the tables and data - by using the red button at the end of the table. Once you click all will be reseted to the start point.
 
 ## Support
 
