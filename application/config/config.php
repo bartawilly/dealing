@@ -23,13 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-
-// uncomment the below line for working locally and comment the heroku base url.
-//$config['base_url'] = 'http://localhost/dealing';
-
-// for heroku 
-$config['base_url'] = 'https://dealing.herokuapp.com/';
-
+$config['base_url'] = 'http://localhost/dealing';
 
 /*
 |--------------------------------------------------------------------------
